@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<PMML 
+	 version="4.0"
+	 xmlns="http://www.dmg.org/PMML-4_0"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://www.dmg.org/PMML-4_0 pmml-4-0.xsd">
+	<Header 
+		 copyright="Copyright (c) 1989, 2010 SPSS Inc., an IBM Company.">
+		<Application  name="IBM SPSS Statistics "  version="19.0.0" />
+	</Header>
+	<DataDictionary 
+		 numberOfFields="3">
+		<DataField 
+			 name="fallingoutofbed"
+			 optype="categorical"
+			 dataType="double">
+			<Extension  extender="spss.com"  name="format"  value="5" />
+			<Extension  extender="spss.com"  name="width"  value="8" />
+			<Extension  extender="spss.com"  name="decimals"  value="2" />
+			<Value  value="0"  displayValue=",00"  property="valid" />
+			<Value  value="1"  displayValue="1,00"  property="valid" />
+		</DataField>
+		<DataField 
+			 name="departmenttype"
+			 optype="continuous"
+			 dataType="double">
+			<Extension  extender="spss.com"  name="format"  value="5" />
+			<Extension  extender="spss.com"  name="width"  value="8" />
+			<Extension  extender="spss.com"  name="decimals"  value="2" />
+		</DataField>
+		<DataField 
+			 name="letterofcomplaint"
+			 optype="continuous"
+			 dataType="double">
+			<Extension  extender="spss.com"  name="format"  value="5" />
+			<Extension  extender="spss.com"  name="width"  value="8" />
+			<Extension  extender="spss.com"  name="decimals"  value="2" />
+		</DataField>
+	</DataDictionary>
+	<GeneralRegressionModel 
+		 targetVariableName="fallingoutofbed"
+		 modelType="multinomialLogistic"
+		 modelName="x-contrastLogistic"
+		 functionName="classification">
+		<Extension  extender="spss.com"  name="numberParameters"  value="3" />
+		<MiningSchema >
+			<MiningField  name="fallingoutofbed"  usageType="predicted"  missingValueTreatment="asIs" />
+			<MiningField  name="departmenttype"  usageType="active"  missingValueTreatment="asIs" />
+			<MiningField  name="letterofcomplaint"  usageType="active"  missingValueTreatment="asIs" />
+		</MiningSchema>
+		<ParameterList >
+			<Parameter  name="P0000001"  label="Constant" />
+			<Parameter  name="P0000002"  label="departmenttype" />
+			<Parameter  name="P0000003"  label="letterofcomplaint" />
+		</ParameterList>
+		<CovariateList >
+			<Predictor  name="departmenttype" />
+			<Predictor  name="letterofcomplaint" />
+		</CovariateList>
+		<PPMatrix >
+			<PPCell  value="1"  predictorName="departmenttype"  parameterName="P0000002" />
+			<PPCell  value="1"  predictorName="letterofcomplaint"  parameterName="P0000003" />
+		</PPMatrix>
+		<PCovMatrix >
+			<PCovCell  tRow="1"  tCol="1"  pRow="P0000001"  pCol="P0000001"  value="0.200961530708715" />
+			<PCovCell  tRow="1"  tCol="1"  pRow="P0000002"  pCol="P0000001"  value="-0.162151972040983" />
+			<PCovCell  tRow="1"  tCol="1"  pRow="P0000002"  pCol="P0000002"  value="0.463115956878269" />
+			<PCovCell  tRow="1"  tCol="1"  pRow="P0000003"  pCol="P0000001"  value="-0.160422608430094" />
+			<PCovCell  tRow="1"  tCol="1"  pRow="P0000003"  pCol="P0000002"  value="0.0463703287740575" />
+			<PCovCell  tRow="1"  tCol="1"  pRow="P0000003"  pCol="P0000003"  value="0.471444789065128" />
+		</PCovMatrix>
+		<ParamMatrix >
+			<PCell  targetCategory="1"  parameterName="P0000001"  beta="-1.00714624414728"  df="1" />
+			<PCell  targetCategory="1"  parameterName="P0000002"  beta="1.34908328483418"  df="1" />
+			<PCell  targetCategory="1"  parameterName="P0000003"  beta="2.03870237654802"  df="1" />
+		</ParamMatrix>
+	</GeneralRegressionModel>
+</PMML>

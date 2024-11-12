@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<spss-ml 
+	 version="1.0"
+	 xmlns="http://xml.spss.com/spss/spss-ml"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://xml.spss.com/spss/spss-ml spss-ml-1.0.xsd">
+	<dictionary 
+		 version="1.0">
+		<variable 
+			 name="diagnosisgroup"
+			 label="diagnosis"
+			 measurement-level="CONTINUOUS"
+			 storage-type="NUMERIC">
+			<format-spec  format="5"  width="8"  decimals="2" />
+		</variable>
+		<variable 
+			 name="gammagt"
+			 label="gammagt"
+			 measurement-level="CONTINUOUS"
+			 storage-type="NUMERIC">
+			<format-spec  format="5"  width="8"  decimals="2" />
+			<var-stats  mean="307.422210693359" />
+		</variable>
+		<variable 
+			 name="asat"
+			 label="asat"
+			 measurement-level="CONTINUOUS"
+			 storage-type="NUMERIC">
+			<format-spec  format="5"  width="8"  decimals="2" />
+			<var-stats  mean="362.799987792969" />
+		</variable>
+		<variable 
+			 name="alat"
+			 label="alat"
+			 measurement-level="CONTINUOUS"
+			 storage-type="NUMERIC">
+			<format-spec  format="5"  width="8"  decimals="2" />
+			<var-stats  mean="282" />
+		</variable>
+		<variable 
+			 name="bili"
+			 label="bili"
+			 measurement-level="CONTINUOUS"
+			 storage-type="NUMERIC">
+			<format-spec  format="5"  width="8"  decimals="2" />
+			<var-stats  mean="99.1777801513672" />
+		</variable>
+		<variable 
+			 name="ureum"
+			 label="ureum"
+			 measurement-level="CONTINUOUS"
+			 storage-type="NUMERIC">
+			<format-spec  format="5"  width="8"  decimals="2" />
+			<var-stats  mean="19.9288883209229" />
+		</variable>
+		<variable 
+			 name="creatinine"
+			 label="creatinine"
+			 measurement-level="CONTINUOUS"
+			 storage-type="NUMERIC">
+			<format-spec  format="5"  width="8"  decimals="2" />
+			<var-stats  mean="269.200012207031" />
+		</variable>
+		<variable 
+			 name="creatinineclearance"
+			 label="creatinine clearance"
+			 measurement-level="CONTINUOUS"
+			 storage-type="NUMERIC">
+			<format-spec  format="5"  width="8"  decimals="2" />
+			<var-stats  mean="52.0666656494141" />
+		</variable>
+		<variable 
+			 name="erythrocytesr"
+			 label="esr"
+			 measurement-level="CONTINUOUS"
+			 storage-type="NUMERIC">
+			<format-spec  format="5"  width="8"  decimals="2" />
+			<var-stats  mean="56.7333335876465" />
+		</variable>
+		<variable 
+			 name="creactiveprotein"
+			 label="c-reactive protein"
+			 measurement-level="CONTINUOUS"
+			 storage-type="NUMERIC">
+			<format-spec  format="5"  width="8"  decimals="2" />
+			<var-stats  mean="41.6666679382324" />
+		</variable>
+		<variable 
+			 name="leucos"
+			 label="leucos"
+			 measurement-level="CONTINUOUS"
+			 storage-type="NUMERIC">
+			<format-spec  format="5"  width="8"  decimals="2" />
+			<var-stats  mean="26.8222217559814" />
+		</variable>
+	</dictionary>
+	<model 
+		 unique-id=""
+		 verbose-model-specification="">
+		<discriminant-model 
+			 target-variable-name="diagnosisgroup"
+			 number-functions="2">
+			<function-coefficients >
+				<cell  row="gammagt"  column="1"  value="0.000670675806845552" />
+				<cell  row="gammagt"  column="2"  value="-0.00595916327734536" />
+				<cell  row="asat"  column="1"  value="0.000615265888150091" />
+				<cell  row="asat"  column="2"  value="0.00118910531884513" />
+				<cell  row="alat"  column="1"  value="0.000608747124861965" />
+				<cell  row="alat"  column="2"  value="0.00291370345265312" />
+				<cell  row="bili"  column="1"  value="-0.00545774113915211" />
+				<cell  row="bili"  column="2"  value="0.00906302942702513" />
+				<cell  row="ureum"  column="1"  value="0.0581260433891279" />
+				<cell  row="ureum"  column="2"  value="0.00944998962160927" />
+				<cell  row="creatinine"  column="1"  value="0.0038463389252592" />
+				<cell  row="creatinine"  column="2"  value="-0.00289342507967502" />
+				<cell  row="creatinineclearance"  column="1"  value="0.0278835504312918" />
+				<cell  row="creatinineclearance"  column="2"  value="0.0164506332764113" />
+				<cell  row="erythrocytesr"  column="1"  value="0.0028350935737919" />
+				<cell  row="erythrocytesr"  column="2"  value="0.00599214731246279" />
+				<cell  row="creactiveprotein"  column="1"  value="-0.0205984255768819" />
+				<cell  row="creactiveprotein"  column="2"  value="0.0197578477985033" />
+				<cell  row="leucos"  column="1"  value="-0.00622273475088815" />
+				<cell  row="leucos"  column="2"  value="0.0680714701393633" />
+				<cell  column="1"  value="-2.84107358928209" />
+				<cell  column="2"  value="-3.57491733370847" />
+			</function-coefficients>
+			<fgc-matrix >
+				<cell  row="1"  column="1"  value="-0.520013584029717" />
+				<cell  row="1"  column="2"  value="0.408110663830047" />
+				<cell  row="2"  column="1"  value="-0.693832893890806" />
+				<cell  row="2"  column="2"  value="-0.512486547198541" />
+				<cell  row="3"  column="1"  value="1.63282655091966" />
+				<cell  row="3"  column="2"  value="-0.048274245999278" />
+			</fgc-matrix>
+			<prior-vector >
+				<prior-value  target-category="1"  value="0.333333333333333" />
+				<prior-value  target-category="2"  value="0.333333333333333" />
+				<prior-value  target-category="3"  value="0.333333333333333" />
+			</prior-vector>
+		</discriminant-model>
+	</model>
+</spss-ml>

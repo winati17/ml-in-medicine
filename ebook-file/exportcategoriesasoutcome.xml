@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<PMML 
+	 version="4.0"
+	 xmlns="http://www.dmg.org/PMML-4_0"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://www.dmg.org/PMML-4_0 pmml-4-0.xsd">
+	<Header 
+		 copyright="Copyright (c) IBM Corp. 1999, 2012.">
+		<Application  name="IBM SPSS Statistics"  version="21.0.0.0" />
+	</Header>
+	<DataDictionary 
+		 numberOfFields="3">
+		<DataField 
+			 name="falloutofbed"
+			 displayName="fall with/out injury"
+			 optype="categorical"
+			 dataType="double">
+			<Extension  extender="spss.com"  name="format"  value="5" />
+			<Extension  extender="spss.com"  name="width"  value="8" />
+			<Extension  extender="spss.com"  name="decimals"  value="0" />
+			<Value  value="0"  displayValue="0"  property="valid" />
+			<Value  value="1"  displayValue="1"  property="valid" />
+			<Value  value="2"  displayValue="2"  property="valid" />
+		</DataField>
+		<DataField 
+			 name="department"
+			 displayName="department"
+			 optype="categorical"
+			 dataType="string">
+			<Extension  extender="spss.com"  name="format"  value="1" />
+			<Extension  extender="spss.com"  name="width"  value="8" />
+			<Extension  extender="spss.com"  name="decimals"  value="0" />
+			<Value  value="     ,00"  displayValue="     ,00"  property="valid" />
+			<Value  value="    1,00"  displayValue="    1,00"  property="valid" />
+		</DataField>
+		<DataField 
+			 name="age"
+			 displayName="age"
+			 optype="continuous"
+			 dataType="double">
+			<Extension  extender="spss.com"  name="format"  value="5" />
+			<Extension  extender="spss.com"  name="width"  value="8" />
+			<Extension  extender="spss.com"  name="decimals"  value="2" />
+		</DataField>
+	</DataDictionary>
+	<GeneralRegressionModel 
+		 targetVariableName="falloutofbed"
+		 modelType="multinomialLogistic"
+		 algorithmName="multinomialLogistic"
+		 functionName="classification">
+		<Extension  extender="spss.com"  name="numberParameters"  value="8" />
+		<MiningSchema >
+			<MiningField  name="falloutofbed"  usageType="predicted"  missingValueTreatment="asIs" />
+			<MiningField  name="department"  usageType="active"  missingValueTreatment="asIs" />
+			<MiningField  name="age"  usageType="active"  missingValueTreatment="asIs" />
+		</MiningSchema>
+		<ParameterList >
+			<Parameter  name="P0000001"  label="Intercept" />
+			<Parameter  name="P0000002"  label="age" />
+			<Parameter  name="P0000003"  label="[department=,00]" />
+			<Parameter  name="P0000004"  label="[department=1,00]" />
+		</ParameterList>
+		<FactorList >
+			<Predictor  name="department" />
+		</FactorList>
+		<CovariateList >
+			<Predictor  name="age" />
+		</CovariateList>
+		<PPMatrix >
+			<PPCell  value="1"  predictorName="age"  parameterName="P0000002" />
+			<PPCell  value="     ,00"  predictorName="department"  parameterName="P0000003" />
+			<PPCell  value="    1,00"  predictorName="department"  parameterName="P0000004" />
+		</PPMatrix>
+		<ParamMatrix >
+			<PCell  targetCategory="0"  parameterName="P0000001"  beta="5.33702655287725"  df="1" />
+			<PCell  targetCategory="0"  parameterName="P0000002"  beta="-0.0587746170008545"  df="1" />
+			<PCell  targetCategory="0"  parameterName="P0000003"  beta="-1.13876320874913"  df="1" />
+			<PCell  targetCategory="0"  parameterName="P0000004"  beta="0"  df="0" />
+			<PCell  targetCategory="1"  parameterName="P0000001"  beta="3.49282497485835"  df="1" />
+			<PCell  targetCategory="1"  parameterName="P0000002"  beta="-0.0219599150080063"  df="1" />
+			<PCell  targetCategory="1"  parameterName="P0000003"  beta="-1.94496739689564"  df="1" />
+			<PCell  targetCategory="1"  parameterName="P0000004"  beta="0"  df="0" />
+		</ParamMatrix>
+	</GeneralRegressionModel>
+</PMML>

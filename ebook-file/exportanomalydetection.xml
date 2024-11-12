@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<PMML version="4.0" xmlns="http://www.dmg.org/PMML-4_0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.dmg.org/PMML-4_0 pmml-4-0.xsd">
+	<Header copyright="Copyright (c) IBM Corp. 1999, 2012.">
+		  <Application name="IBM SPSS Statistics" version="21.0.0.0"/>
+	</Header>
+	<DataDictionary numberOfFields="2">
+		  <DataField dataType="double" displayName="comed" name="comed" optype="continuous"/>
+		  <DataField dataType="double" displayName="age" name="age" optype="continuous"/>
+	</DataDictionary>
+	<TransformationDictionary>
+		  <DerivedField dataType="double" name="$c1" optype="continuous">
+			  <FieldRef field="comed"/>
+		</DerivedField>
+		  <DerivedField dataType="double" name="$c2" optype="continuous">
+			  <FieldRef field="age"/>
+		</DerivedField>
+	</TransformationDictionary>
+	<ClusteringModel algorithmName="TwoStep" functionName="clustering" modelClass="distributionBased" numberOfClusters="3" x-handleNoise="True" x-volume="0.800553273052381">
+		  <MiningSchema>
+			  <MiningField importance="1" name="comed">
+        <Extension extender="spss" name="Importance">
+          <Importance dataUsage="training" value="1"/>
+        </Extension>
+      </MiningField>
+			  <MiningField importance="0.940361509560111" name="age">
+        <Extension extender="spss" name="Importance">
+          <Importance dataUsage="training" value="0.940361509560111"/>
+        </Extension>
+      </MiningField>
+		  </MiningSchema>
+		  <Output>
+			  <OutputField dataType="integer" feature="entityId" name="TSC_5980" optype="categorical"/>
+		</Output>
+		  <ModelStats>
+			  <UnivariateStats field="comed">
+				    <NumericInfo maximum="8" mean="1.8090277777777783" minimum="0" standardDeviation="1.3468114070587514"/>
+			</UnivariateStats>
+			  <UnivariateStats field="age">
+				    <NumericInfo maximum="1992" mean="1936.8090277777765" minimum="1909" standardDeviation="14.91570477021687"/>
+			</UnivariateStats>
+		</ModelStats>
+		  <ComparisonMeasure kind="distance">
+			  <squaredEuclidean/>
+		</ComparisonMeasure>
+		  <ClusteringField field="$c1" fieldWeight="1.81390096618357" isCenterField="true"/>
+		  <ClusteringField field="$c2" fieldWeight="222.47824879227" isCenterField="true"/>
+		  <Cluster name="1" size="159">
+			  <Array n="2" type="real">2.5911949685534594 1930.0691823899369 </Array>
+			  <Covariances>
+				    <Matrix kind="diagonal">
+					    <Array n="2" type="real">0.29384603136692938 76.077461985510965 </Array>
+				</Matrix>
+			</Covariances>
+		    <Partition>
+        <PartitionFieldStats field="comed">
+          <Extension extender="spss" name="EqualWidthBinning">
+            <Array n="400" type="int">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 90 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 91 </Array>
+            <Array n="400" type="real">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3 </Array>
+          </Extension>
+          <Counts missingFreq="0" totalFreq="181"/>
+          <NumericInfo interQuartileRange="0.997375457875458" maximum="3" mean="2.50276243093923" median="2.99258241758242" minimum="2" standardDeviation="0.501379312965357">
+            <Quantile quantileLimit="25" quantileValue="1.99883333333333"/>
+            <Quantile quantileLimit="75" quantileValue="2.99620879120879"/>
+          </NumericInfo>
+        </PartitionFieldStats>
+        <PartitionFieldStats field="age">
+          <Extension extender="spss" name="EqualWidthBinning">
+            <Array n="400" type="int">1 0 0 0 0 0 0 5 0 0 0 0 0 0 0 9 0 0 0 0 0 0 0 15 0 0 0 0 0 0 4 0 0 0 0 0 0 0 10 0 0 0 0 0 0 0 15 0 0 0 0 0 0 8 0 0 0 0 0 0 0 6 0 0 0 0 0 0 0 12 0 0 0 0 0 0 3 0 0 0 0 0 0 0 12 0 0 0 0 0 0 0 13 0 0 0 0 0 0 0 7 0 0 0 0 0 0 7 0 0 0 0 0 0 0 6 0 0 0 0 0 0 0 9 0 0 0 0 0 0 5 0 0 0 0 0 0 0 4 0 0 0 0 0 0 0 7 0 0 0 0 0 0 2 0 0 0 0 0 0 0 6 0 0 0 0 0 0 0 4 0 0 0 0 0 0 8 0 0 0 0 0 0 0 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </Array>
+            <Array n="400" type="real">1918 0 0 0 0 0 0 1919 0 0 0 0 0 0 0 1920 0 0 0 0 0 0 0 1921 0 0 0 0 0 0 1922 0 0 0 0 0 0 0 1923 0 0 0 0 0 0 0 1924 0 0 0 0 0 0 1925 0 0 0 0 0 0 0 1926 0 0 0 0 0 0 0 1927 0 0 0 0 0 0 1928 0 0 0 0 0 0 0 1929 0 0 0 0 0 0 0 1930 0 0 0 0 0 0 0 1931 0 0 0 0 0 0 1932 0 0 0 0 0 0 0 1933 0 0 0 0 0 0 0 1934 0 0 0 0 0 0 1935 0 0 0 0 0 0 0 1936 0 0 0 0 0 0 0 1937 0 0 0 0 0 0 1938 0 0 0 0 0 0 0 1939 0 0 0 0 0 0 0 1940 0 0 0 0 0 0 1941 0 0 0 0 0 0 0 1942 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </Array>
+          </Extension>
+          <Counts missingFreq="0" totalFreq="181"/>
+          <NumericInfo interQuartileRange="10.0215555555556" maximum="1942" mean="1928.9226519337" median="1928.9525" minimum="1918" standardDeviation="6.50935955506111">
+            <Quantile quantileLimit="25" quantileValue="1923.99733333333"/>
+            <Quantile quantileLimit="75" quantileValue="1934.01888888889"/>
+          </NumericInfo>
+        </PartitionFieldStats>
+      </Partition>
+    </Cluster>
+		  <Cluster name="2" size="133">
+			  <Array n="2" type="real">0.62406015037593976 1933.8571428571429 </Array>
+			  <Covariances>
+				    <Matrix kind="diagonal">
+					    <Array n="2" type="real">0.23638642059694692 45.093073593073463 </Array>
+				</Matrix>
+			</Covariances>
+		    <Partition>
+        <PartitionFieldStats field="comed">
+          <Extension extender="spss" name="EqualWidthBinning">
+            <Array n="400" type="int">57 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 95 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </Array>
+            <Array n="400" type="real">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </Array>
+          </Extension>
+          <Counts missingFreq="0" totalFreq="152"/>
+          <NumericInfo interQuartileRange="0.996842105263158" maximum="1" mean="0.625" median="0.999039473684211" minimum="0" standardDeviation="0.48572332898254">
+            <Quantile quantileLimit="25" quantileValue="0.00509868421052632"/>
+            <Quantile quantileLimit="75" quantileValue="1.00194078947368"/>
+          </NumericInfo>
+        </PartitionFieldStats>
+        <PartitionFieldStats field="age">
+          <Extension extender="spss" name="EqualWidthBinning">
+            <Array n="400" type="int">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 4 0 0 0 0 0 0 0 5 0 0 0 0 0 0 7 0 0 0 0 0 0 0 3 0 0 0 0 0 0 0 8 0 0 0 0 0 0 2 0 0 0 0 0 0 0 10 0 0 0 0 0 0 0 11 0 0 0 0 0 0 0 8 0 0 0 0 0 0 7 0 0 0 0 0 0 0 11 0 0 0 0 0 0 0 10 0 0 0 0 0 0 8 0 0 0 0 0 0 0 4 0 0 0 0 0 0 0 9 0 0 0 0 0 0 4 0 0 0 0 0 0 0 7 0 0 0 0 0 0 0 9 0 0 0 0 0 0 4 0 0 0 0 0 0 0 4 0 0 0 0 0 0 0 9 0 0 0 0 0 0 0 5 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </Array>
+            <Array n="400" type="real">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1922 0 0 0 0 0 0 0 1923 0 0 0 0 0 0 0 1924 0 0 0 0 0 0 1925 0 0 0 0 0 0 0 1926 0 0 0 0 0 0 0 1927 0 0 0 0 0 0 1928 0 0 0 0 0 0 0 1929 0 0 0 0 0 0 0 1930 0 0 0 0 0 0 0 1931 0 0 0 0 0 0 1932 0 0 0 0 0 0 0 1933 0 0 0 0 0 0 0 1934 0 0 0 0 0 0 1935 0 0 0 0 0 0 0 1936 0 0 0 0 0 0 0 1937 0 0 0 0 0 0 1938 0 0 0 0 0 0 0 1939 0 0 0 0 0 0 0 1940 0 0 0 0 0 0 1941 0 0 0 0 0 0 0 1942 0 0 0 0 0 0 0 1943 0 0 0 0 0 0 0 1944 0 0 0 0 0 0 1945 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </Array>
+          </Extension>
+          <Counts missingFreq="0" totalFreq="152"/>
+          <NumericInfo interQuartileRange="9.91946428571418" maximum="1945" mean="1933.71710526316" median="1933.07409090909" minimum="1922" standardDeviation="6.01699333417851">
+            <Quantile quantileLimit="25" quantileValue="1929.03375"/>
+            <Quantile quantileLimit="75" quantileValue="1938.95321428571"/>
+          </NumericInfo>
+        </PartitionFieldStats>
+      </Partition>
+    </Cluster>
+		  <Cluster name="3" size="17">
+			  <Array n="2" type="real">0.99999999999999989 1957.8823529411766 </Array>
+			  <Covariances>
+				    <Matrix kind="diagonal">
+					    <Array n="2" type="real">0.37499999999999994 41.360294117646887 </Array>
+				</Matrix>
+			</Covariances>
+		    <Partition>
+        <PartitionFieldStats field="comed">
+          <Extension extender="spss" name="EqualWidthBinning">
+            <Array n="400" type="int">12 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 40 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 17 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </Array>
+            <Array n="400" type="real">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </Array>
+          </Extension>
+          <Counts missingFreq="0" totalFreq="69"/>
+          <NumericInfo interQuartileRange="0.00618750000000012" maximum="2" mean="1.07246376811594" median="1.0018125" minimum="0" standardDeviation="0.64895482892993">
+            <Quantile quantileLimit="25" quantileValue="0.998625"/>
+            <Quantile quantileLimit="75" quantileValue="1.0048125"/>
+          </NumericInfo>
+        </PartitionFieldStats>
+        <PartitionFieldStats field="age">
+          <Extension extender="spss" name="EqualWidthBinning">
+            <Array n="400" type="int">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 2 0 0 0 0 0 0 2 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 3 0 0 0 0 0 0 11 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 2 0 0 0 0 0 0 3 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 3 0 0 0 0 0 0 0 1 0 0 0 0 0 0 3 0 0 0 0 0 0 0 5 0 0 0 0 0 0 0 8 0 0 0 0 0 0 1 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 4 0 0 0 0 0 0 6 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 </Array>
+            <Array n="400" type="real">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1946 0 0 0 0 0 0 0 1947 0 0 0 0 0 0 1948 0 0 0 0 0 0 0 1949 0 0 0 0 0 0 0 1950 0 0 0 0 0 0 1951 0 0 0 0 0 0 0 1952 0 0 0 0 0 0 0 1953 0 0 0 0 0 0 1954 0 0 0 0 0 0 0 1955 0 0 0 0 0 0 0 1956 0 0 0 0 0 0 0 1957 0 0 0 0 0 0 1958 0 0 0 0 0 0 0 1959 0 0 0 0 0 0 0 1960 0 0 0 0 0 0 1961 0 0 0 0 0 0 0 1962 0 0 0 0 0 0 0 1963 0 0 0 0 0 0 1964 0 0 0 0 0 0 0 1965 0 0 0 0 0 0 0 1966 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1968 0 0 0 0 0 0 0 1969 0 0 0 0 0 0 1970 </Array>
+          </Extension>
+          <Counts missingFreq="0" totalFreq="69"/>
+          <NumericInfo interQuartileRange="10.9554545454546" maximum="1970" mean="1956.85507246377" median="1957.95333333333" minimum="1946" standardDeviation="6.16983974031272">
+            <Quantile quantileLimit="25" quantileValue="1950.98454545455"/>
+            <Quantile quantileLimit="75" quantileValue="1961.94"/>
+          </NumericInfo>
+        </PartitionFieldStats>
+      </Partition>
+    </Cluster>
+		  <Extension extender="spss.com">
+			  <X-ClusteringModel criterion="BIC" distanceMeasure="Euclidean" handleNoise="true" initThreshold="0" maxBranch="8" maxLevel="3" maxMemory="64" noiseDefinition="0.25" noiseVolume="0.800553273052381">
+				    <X-CriterionIndex>
+					    <Array n="15" type="real">2147.9949469427943 2131.4145378237795 2039.4577729292182 2032.3869686048695 2052.0410457237231 2070.4982170646635 2090.5624313349686 2105.1679354481471 2126.6772920855124 2145.736604855143 2155.1853898819195 2162.1148157887615 2176.0383384666338 2193.4773975329913 2215.3572035025081 </Array>
+				</X-CriterionIndex>
+				    <X-Distances>
+					    <Array n="15" type="real">3.3255112951598131 2.1978080804719795 1.5024607498066844 1.4913261384732552 1.3071145437049261 1.1281196879928064 1.0262917657879747 0.62990166793063473 0.5600850994010268 0.55191414582519638 0.55174977657711932 0.52140999779712394 0.43554556271690076 0.40565763390320081 0.33113891913300852 </Array>
+				</X-Distances>
+				    <X-OutlierCluster>
+					    <Cluster name="-1" size="267">
+						      <Array n="2" type="real">1.9850187265917605 1940.9513108614228 </Array>
+						      <Covariances>
+							      <Matrix kind="diagonal">
+								        <Array n="2" type="real">2.4659401312269464 333.75325955338315 </Array>
+							</Matrix>
+						</Covariances>
+					</Cluster>
+				</X-OutlierCluster>
+			</X-ClusteringModel>
+		</Extension>
+	</ClusteringModel>
+	<Extension extender="spss.com" name="DataDictionaryFieldProperties">
+		  <FieldFormats>
+			  <NumberFormat alignment="auto" decimalPlaces="2" decimalSymbol="local" formatType="standard" groupingSymbol="local" name="F8.2" width="8"/>
+			  <NumberFormat alignment="auto" decimalPlaces="2" decimalSymbol="local" formatType="standard" groupingSymbol="local" name="F8.2" width="8"/>
+		</FieldFormats>
+		  <FieldExtensions>
+			  <FieldExtension formatName="F8.2" name="comed"/>
+			  <FieldExtension formatName="F8.2" name="age"/>
+		</FieldExtensions>
+	</Extension>
+  <Extension extender="spss" name="ModelExplanation">
+    <ModelExplanation>
+      <Extension extender="spss" name="ModelProfiles">
+        <ModelProfiles dataName="" dataUsage="training" targetField="TSC_5980">
+          <ClusteringModelProfile>
+            <ModelStats>
+              <UnivariateStats field="comed">
+                <Counts missingFreq="0" totalFreq="402"/>
+                <NumericInfo interQuartileRange="1.00248987538941" maximum="3" mean="1.54726368159204" median="1.00486111111111" minimum="0" standardDeviation="1.02293157279352">
+                  <Quantile quantileLimit="25" quantileValue="0.999291666666667"/>
+                  <Quantile quantileLimit="75" quantileValue="2.00178154205607"/>
+                </NumericInfo>
+                <ContStats>
+                  <Extension extender="spss" name="EqualWidthBinning">
+                    <Array n="400" type="int">69 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 135 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 107 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 91 </Array>
+                    <Array n="400" type="real">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3 </Array>
+                  </Extension>
+                </ContStats>
+              </UnivariateStats>
+              <UnivariateStats field="age">
+                <Counts missingFreq="0" totalFreq="402"/>
+                <NumericInfo interQuartileRange="13.8861666666667" maximum="1970" mean="1935.52985074627" median="1933.015" minimum="1918" standardDeviation="11.7605093650869">
+                  <Quantile quantileLimit="25" quantileValue="1927.023625"/>
+                  <Quantile quantileLimit="75" quantileValue="1940.90979166667"/>
+                </NumericInfo>
+                <ContStats>
+                  <Extension extender="spss" name="EqualWidthBinning">
+                    <Array n="400" type="int">1 0 0 0 0 0 0 5 0 0 0 0 0 0 0 9 0 0 0 0 0 0 0 15 0 0 0 0 0 0 5 0 0 0 0 0 0 0 14 0 0 0 0 0 0 0 20 0 0 0 0 0 0 15 0 0 0 0 0 0 0 9 0 0 0 0 0 0 0 20 0 0 0 0 0 0 5 0 0 0 0 0 0 0 22 0 0 0 0 0 0 0 24 0 0 0 0 0 0 0 15 0 0 0 0 0 0 14 0 0 0 0 0 0 0 17 0 0 0 0 0 0 0 19 0 0 0 0 0 0 13 0 0 0 0 0 0 0 8 0 0 0 0 0 0 0 16 0 0 0 0 0 0 6 0 0 0 0 0 0 0 13 0 0 0 0 0 0 0 13 0 0 0 0 0 0 12 0 0 0 0 0 0 0 7 0 0 0 0 0 0 0 9 0 0 0 0 0 0 0 5 0 0 0 0 0 0 2 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 2 0 0 0 0 0 0 2 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 3 0 0 0 0 0 0 11 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 2 0 0 0 0 0 0 3 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 3 0 0 0 0 0 0 0 1 0 0 0 0 0 0 3 0 0 0 0 0 0 0 5 0 0 0 0 0 0 0 8 0 0 0 0 0 0 1 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 4 0 0 0 0 0 0 6 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 </Array>
+                    <Array n="400" type="real">1918 0 0 0 0 0 0 1919 0 0 0 0 0 0 0 1920 0 0 0 0 0 0 0 1921 0 0 0 0 0 0 1922 0 0 0 0 0 0 0 1923 0 0 0 0 0 0 0 1924 0 0 0 0 0 0 1925 0 0 0 0 0 0 0 1926 0 0 0 0 0 0 0 1927 0 0 0 0 0 0 1928 0 0 0 0 0 0 0 1929 0 0 0 0 0 0 0 1930 0 0 0 0 0 0 0 1931 0 0 0 0 0 0 1932 0 0 0 0 0 0 0 1933 0 0 0 0 0 0 0 1934 0 0 0 0 0 0 1935 0 0 0 0 0 0 0 1936 0 0 0 0 0 0 0 1937 0 0 0 0 0 0 1938 0 0 0 0 0 0 0 1939 0 0 0 0 0 0 0 1940 0 0 0 0 0 0 1941 0 0 0 0 0 0 0 1942 0 0 0 0 0 0 0 1943 0 0 0 0 0 0 0 1944 0 0 0 0 0 0 1945 0 0 0 0 0 0 0 1946 0 0 0 0 0 0 0 1947 0 0 0 0 0 0 1948 0 0 0 0 0 0 0 1949 0 0 0 0 0 0 0 1950 0 0 0 0 0 0 1951 0 0 0 0 0 0 0 1952 0 0 0 0 0 0 0 1953 0 0 0 0 0 0 1954 0 0 0 0 0 0 0 1955 0 0 0 0 0 0 0 1956 0 0 0 0 0 0 0 1957 0 0 0 0 0 0 1958 0 0 0 0 0 0 0 1959 0 0 0 0 0 0 0 1960 0 0 0 0 0 0 1961 0 0 0 0 0 0 0 1962 0 0 0 0 0 0 0 1963 0 0 0 0 0 0 1964 0 0 0 0 0 0 0 1965 0 0 0 0 0 0 0 1966 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1968 0 0 0 0 0 0 0 1969 0 0 0 0 0 0 1970 </Array>
+                  </Extension>
+                </ContStats>
+              </UnivariateStats>
+            </ModelStats>
+            <Cluster name="1" size="181">
+              <Extension extender="spss" name="CustomCluster">
+                <CustomCluster description="" label=""/>
+              </Extension>
+              <Extension extender="spss" name="Importance">
+                <Array n="2" type="real">1 0.471287201516763 </Array>
+              </Extension>
+              <Partition name="1">
+                <PartitionFieldStats field="comed">
+                  <Counts missingFreq="0" totalFreq="181"/>
+                  <NumericInfo interQuartileRange="0.997375457875458" maximum="3" mean="2.50276243093923" median="2.99258241758242" minimum="2" standardDeviation="0.501379312965357">
+                    <Quantile quantileLimit="25" quantileValue="1.99883333333333"/>
+                    <Quantile quantileLimit="75" quantileValue="2.99620879120879"/>
+                  </NumericInfo>
+                  <Extension extender="spss" name="EqualWidthBinning">
+                    <Array n="400" type="int">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 90 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 91 </Array>
+                    <Array n="400" type="real">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3 </Array>
+                  </Extension>
+                </PartitionFieldStats>
+                <PartitionFieldStats field="age">
+                  <Counts missingFreq="0" totalFreq="181"/>
+                  <NumericInfo interQuartileRange="10.0215555555556" maximum="1942" mean="1928.9226519337" median="1928.9525" minimum="1918" standardDeviation="6.50935955506111">
+                    <Quantile quantileLimit="25" quantileValue="1923.99733333333"/>
+                    <Quantile quantileLimit="75" quantileValue="1934.01888888889"/>
+                  </NumericInfo>
+                  <Extension extender="spss" name="EqualWidthBinning">
+                    <Array n="400" type="int">1 0 0 0 0 0 0 5 0 0 0 0 0 0 0 9 0 0 0 0 0 0 0 15 0 0 0 0 0 0 4 0 0 0 0 0 0 0 10 0 0 0 0 0 0 0 15 0 0 0 0 0 0 8 0 0 0 0 0 0 0 6 0 0 0 0 0 0 0 12 0 0 0 0 0 0 3 0 0 0 0 0 0 0 12 0 0 0 0 0 0 0 13 0 0 0 0 0 0 0 7 0 0 0 0 0 0 7 0 0 0 0 0 0 0 6 0 0 0 0 0 0 0 9 0 0 0 0 0 0 5 0 0 0 0 0 0 0 4 0 0 0 0 0 0 0 7 0 0 0 0 0 0 2 0 0 0 0 0 0 0 6 0 0 0 0 0 0 0 4 0 0 0 0 0 0 8 0 0 0 0 0 0 0 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </Array>
+                    <Array n="400" type="real">1918 0 0 0 0 0 0 1919 0 0 0 0 0 0 0 1920 0 0 0 0 0 0 0 1921 0 0 0 0 0 0 1922 0 0 0 0 0 0 0 1923 0 0 0 0 0 0 0 1924 0 0 0 0 0 0 1925 0 0 0 0 0 0 0 1926 0 0 0 0 0 0 0 1927 0 0 0 0 0 0 1928 0 0 0 0 0 0 0 1929 0 0 0 0 0 0 0 1930 0 0 0 0 0 0 0 1931 0 0 0 0 0 0 1932 0 0 0 0 0 0 0 1933 0 0 0 0 0 0 0 1934 0 0 0 0 0 0 1935 0 0 0 0 0 0 0 1936 0 0 0 0 0 0 0 1937 0 0 0 0 0 0 1938 0 0 0 0 0 0 0 1939 0 0 0 0 0 0 0 1940 0 0 0 0 0 0 1941 0 0 0 0 0 0 0 1942 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </Array>
+                  </Extension>
+                </PartitionFieldStats>
+              </Partition>
+            </Cluster>
+            <Cluster name="2" size="152">
+              <Extension extender="spss" name="CustomCluster">
+                <CustomCluster description="" label=""/>
+              </Extension>
+              <Extension extender="spss" name="Importance">
+                <Array n="2" type="real">1 0.0689612206038929 </Array>
+              </Extension>
+              <Partition name="2">
+                <PartitionFieldStats field="comed">
+                  <Counts missingFreq="0" totalFreq="152"/>
+                  <NumericInfo interQuartileRange="0.996842105263158" maximum="1" mean="0.625" median="0.999039473684211" minimum="0" standardDeviation="0.48572332898254">
+                    <Quantile quantileLimit="25" quantileValue="0.00509868421052632"/>
+                    <Quantile quantileLimit="75" quantileValue="1.00194078947368"/>
+                  </NumericInfo>
+                  <Extension extender="spss" name="EqualWidthBinning">
+                    <Array n="400" type="int">57 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 95 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </Array>
+                    <Array n="400" type="real">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </Array>
+                  </Extension>
+                </PartitionFieldStats>
+                <PartitionFieldStats field="age">
+                  <Counts missingFreq="0" totalFreq="152"/>
+                  <NumericInfo interQuartileRange="9.91946428571418" maximum="1945" mean="1933.71710526316" median="1933.07409090909" minimum="1922" standardDeviation="6.01699333417851">
+                    <Quantile quantileLimit="25" quantileValue="1929.03375"/>
+                    <Quantile quantileLimit="75" quantileValue="1938.95321428571"/>
+                  </NumericInfo>
+                  <Extension extender="spss" name="EqualWidthBinning">
+                    <Array n="400" type="int">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 4 0 0 0 0 0 0 0 5 0 0 0 0 0 0 7 0 0 0 0 0 0 0 3 0 0 0 0 0 0 0 8 0 0 0 0 0 0 2 0 0 0 0 0 0 0 10 0 0 0 0 0 0 0 11 0 0 0 0 0 0 0 8 0 0 0 0 0 0 7 0 0 0 0 0 0 0 11 0 0 0 0 0 0 0 10 0 0 0 0 0 0 8 0 0 0 0 0 0 0 4 0 0 0 0 0 0 0 9 0 0 0 0 0 0 4 0 0 0 0 0 0 0 7 0 0 0 0 0 0 0 9 0 0 0 0 0 0 4 0 0 0 0 0 0 0 4 0 0 0 0 0 0 0 9 0 0 0 0 0 0 0 5 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </Array>
+                    <Array n="400" type="real">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1922 0 0 0 0 0 0 0 1923 0 0 0 0 0 0 0 1924 0 0 0 0 0 0 1925 0 0 0 0 0 0 0 1926 0 0 0 0 0 0 0 1927 0 0 0 0 0 0 1928 0 0 0 0 0 0 0 1929 0 0 0 0 0 0 0 1930 0 0 0 0 0 0 0 1931 0 0 0 0 0 0 1932 0 0 0 0 0 0 0 1933 0 0 0 0 0 0 0 1934 0 0 0 0 0 0 1935 0 0 0 0 0 0 0 1936 0 0 0 0 0 0 0 1937 0 0 0 0 0 0 1938 0 0 0 0 0 0 0 1939 0 0 0 0 0 0 0 1940 0 0 0 0 0 0 1941 0 0 0 0 0 0 0 1942 0 0 0 0 0 0 0 1943 0 0 0 0 0 0 0 1944 0 0 0 0 0 0 1945 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </Array>
+                  </Extension>
+                </PartitionFieldStats>
+              </Partition>
+            </Cluster>
+            <Cluster name="3" size="69">
+              <Extension extender="spss" name="CustomCluster">
+                <CustomCluster description="" label=""/>
+              </Extension>
+              <Extension extender="spss" name="Importance">
+                <Array n="2" type="real">0.184714647831515 1 </Array>
+              </Extension>
+              <Partition name="3">
+                <PartitionFieldStats field="comed">
+                  <Counts missingFreq="0" totalFreq="69"/>
+                  <NumericInfo interQuartileRange="0.00618750000000012" maximum="2" mean="1.07246376811594" median="1.0018125" minimum="0" standardDeviation="0.64895482892993">
+                    <Quantile quantileLimit="25" quantileValue="0.998625"/>
+                    <Quantile quantileLimit="75" quantileValue="1.0048125"/>
+                  </NumericInfo>
+                  <Extension extender="spss" name="EqualWidthBinning">
+                    <Array n="400" type="int">12 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 40 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 17 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </Array>
+                    <Array n="400" type="real">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </Array>
+                  </Extension>
+                </PartitionFieldStats>
+                <PartitionFieldStats field="age">
+                  <Counts missingFreq="0" totalFreq="69"/>
+                  <NumericInfo interQuartileRange="10.9554545454546" maximum="1970" mean="1956.85507246377" median="1957.95333333333" minimum="1946" standardDeviation="6.16983974031272">
+                    <Quantile quantileLimit="25" quantileValue="1950.98454545455"/>
+                    <Quantile quantileLimit="75" quantileValue="1961.94"/>
+                  </NumericInfo>
+                  <Extension extender="spss" name="EqualWidthBinning">
+                    <Array n="400" type="int">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 2 0 0 0 0 0 0 2 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 3 0 0 0 0 0 0 11 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 2 0 0 0 0 0 0 3 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 3 0 0 0 0 0 0 0 1 0 0 0 0 0 0 3 0 0 0 0 0 0 0 5 0 0 0 0 0 0 0 8 0 0 0 0 0 0 1 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 4 0 0 0 0 0 0 6 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 </Array>
+                    <Array n="400" type="real">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1946 0 0 0 0 0 0 0 1947 0 0 0 0 0 0 1948 0 0 0 0 0 0 0 1949 0 0 0 0 0 0 0 1950 0 0 0 0 0 0 1951 0 0 0 0 0 0 0 1952 0 0 0 0 0 0 0 1953 0 0 0 0 0 0 1954 0 0 0 0 0 0 0 1955 0 0 0 0 0 0 0 1956 0 0 0 0 0 0 0 1957 0 0 0 0 0 0 1958 0 0 0 0 0 0 0 1959 0 0 0 0 0 0 0 1960 0 0 0 0 0 0 1961 0 0 0 0 0 0 0 1962 0 0 0 0 0 0 0 1963 0 0 0 0 0 0 1964 0 0 0 0 0 0 0 1965 0 0 0 0 0 0 0 1966 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1968 0 0 0 0 0 0 0 1969 0 0 0 0 0 0 1970 </Array>
+                  </Extension>
+                </PartitionFieldStats>
+              </Partition>
+            </Cluster>
+          </ClusteringModelProfile>
+        </ModelProfiles>
+      </Extension>
+      <ModelQuality dataName="" dataUsage="training" targetField="TSC_5980">
+        <Extension extender="spss" name="GoodnessMeasures">
+          <Goodness description="AverageSilhouette" value="0.607077264342811"/>
+          <Goodness description="AverageSSE" value="0.0893909981344654"/>
+          <Goodness description="AverageSSB" value="0.244606964307992"/>
+        </Extension>
+      </ModelQuality>
+    </ModelExplanation>
+  </Extension>
+
+</PMML>

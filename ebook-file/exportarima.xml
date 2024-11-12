@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<TSCXML
+	xmlns="http://www.ibm.com/software/analytics/spss/xml/components/time-series"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.ibm.com/software/analytics/spss/xml/components/time-series www.ibm.com/software/analytics/spss/xml/components/time-series-1.0.xsd">
+	<Header>
+		<Application
+			name="IBM SPSS Statistics"
+			version="21.0.0.0"/>
+	</Header>
+	<DataDictionary/>
+	<ARIMAModel
+		modelName="Model_1"
+		modelDescriptor="HbA1_ARIMA"
+		variableID="HbA1">
+		<Transformation
+			function="logarithm"/>
+		<ConstantTerm>
+			<EstimatedParameter>-2.82825688981846 0.455683973329993</EstimatedParameter>
+		</ConstantTerm>
+		<PredictorEffect
+			variableID="nurse">
+			<Transformation
+				function="logarithm"/>
+			<Numerator>
+				<NonSeasonalFactor>
+					<ZeroLagTerm>
+						<EstimatedParameter>1.24409195032602 0.117528371148708</EstimatedParameter>
+					</ZeroLagTerm>
+				</NonSeasonalFactor>
+			</Numerator>
+		</PredictorEffect>
+		<PredictorEffect
+			variableID="doctor">
+			<Transformation
+				function="logarithm"/>
+			<Numerator>
+				<NonSeasonalFactor>
+					<ZeroLagTerm>
+						<EstimatedParameter>0.309626169777988 0.0765290459402505</EstimatedParameter>
+					</ZeroLagTerm>
+					<LagTerm
+						lag="1">
+						<EstimatedParameter>0.257186163222803 0.116349108952722</EstimatedParameter>
+					</LagTerm>
+					<LagTerm
+						lag="2">
+						<EstimatedParameter>0.195953864210498 0.121260826523979</EstimatedParameter>
+					</LagTerm>
+				</NonSeasonalFactor>
+			</Numerator>
+			<Denominator>
+				<NonSeasonalFactor>
+					<LagTerm
+						lag="1">
+						<EstimatedParameter>-0.189564110292773 0.304234390138777</EstimatedParameter>
+					</LagTerm>
+				</NonSeasonalFactor>
+			</Denominator>
+		</PredictorEffect>
+		<PredictorEffect
+			variableID="phone">
+			<Transformation
+				function="logarithm"/>
+			<Numerator>
+				<NonSeasonalFactor>
+					<ZeroLagTerm>
+						<EstimatedParameter>0.569183501502558 0.063886642583965</EstimatedParameter>
+					</ZeroLagTerm>
+				</NonSeasonalFactor>
+			</Numerator>
+		</PredictorEffect>
+		<OutlierEffect
+			type="additive"
+			startIndex="2">
+			<EstimatedParameter>0.769088821386885 0.136860495523358</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="additive"
+			startIndex="29">
+			<EstimatedParameter>0.578385374469845 0.137789120520514</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="additive"
+			startIndex="52">
+			<EstimatedParameter>0.439449659322428 0.134550405063263</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="additive"
+			startIndex="68">
+			<EstimatedParameter>0.463410775993192 0.134761816369904</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="additive"
+			startIndex="77">
+			<EstimatedParameter>-0.798890482286097 0.138178736469733</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="additive"
+			startIndex="87">
+			<EstimatedParameter>0.590689633331979 0.133960736015862</EstimatedParameter>
+		</OutlierEffect>
+		<OutlierEffect
+			type="additive"
+			startIndex="104">
+			<EstimatedParameter>-1.77093231854937 0.134264056130784</EstimatedParameter>
+		</OutlierEffect>
+		<ARIMACLSState
+			periodDeficit="0">
+			<PredictorState/>
+			<PredictorState>
+				<FinalPredictor>8 10</FinalPredictor>
+				<FinalTransferFunc>2.08439657912186</FinalTransferFunc>
+			</PredictorState>
+			<PredictorState/>
+			<NoiseState/>
+		</ARIMACLSState>
+		<EstimationInfo
+			periodStartIndex="0"
+			periodLength="120"
+			degreesOfFreedom="104">
+			<Statistic
+				type="errVariance">0.0174613832216357</Statistic>
+			<Statistic
+				type="meanSqrErr">5.27416358334705</Statistic>
+			<Statistic
+				type="rootMeanSqrErr">2.29655472030323</Statistic>
+			<Statistic
+				type="meanAbsPctErr">9.72867322048645</Statistic>
+			<Statistic
+				type="meanAbsErr">1.60361768029076</Statistic>
+			<Statistic
+				type="maxAbsPctErr">35.8380516994878</Statistic>
+			<Statistic
+				type="maxAbsErr">8.68984809780532</Statistic>
+			<Statistic
+				type="rSqr">0.883370809617207</Statistic>
+			<Statistic
+				type="normBayesIC">2.22883353441247</Statistic>
+			<Statistic
+				type="logLikelihood">78.8346299301512</Statistic>
+			<Statistic
+				type="akaikeIC">-129.669259860302</Statistic>
+			<Statistic
+				type="bayesIC">-90.879675117783</Statistic>
+			<Statistic
+				type="stationaryRSqr">0.897579557065057</Statistic>
+			<LjungBoxStatistic
+				k="18"
+				degreesOfFreedom="18"
+				pValue="0.47147442780901">17.7613628419874</LjungBoxStatistic>
+		</EstimationInfo>
+	</ARIMAModel>
+</TSCXML>

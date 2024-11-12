@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<PMML 
+	 version="4.0"
+	 xmlns="http://www.dmg.org/PMML-4_0"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://www.dmg.org/PMML-4_0 pmml-4-0.xsd">
+	<Header 
+		 copyright="Copyright (c) IBM Corp. 1999, 2012.">
+		<Application  name="IBM SPSS Statistics"  version="21.0.0.0" />
+	</Header>
+	<DataDictionary 
+		 numberOfFields="5">
+		<DataField 
+			 name="strengthscore"
+			 optype="continuous"
+			 dataType="double">
+			<Extension  extender="spss.com"  name="format"  value="5" />
+			<Extension  extender="spss.com"  name="width"  value="8" />
+			<Extension  extender="spss.com"  name="decimals"  value="2" />
+		</DataField>
+		<DataField 
+			 name="race1"
+			 optype="continuous"
+			 dataType="double">
+			<Extension  extender="spss.com"  name="format"  value="5" />
+			<Extension  extender="spss.com"  name="width"  value="8" />
+			<Extension  extender="spss.com"  name="decimals"  value="2" />
+		</DataField>
+		<DataField 
+			 name="race2"
+			 optype="continuous"
+			 dataType="double">
+			<Extension  extender="spss.com"  name="format"  value="5" />
+			<Extension  extender="spss.com"  name="width"  value="8" />
+			<Extension  extender="spss.com"  name="decimals"  value="2" />
+		</DataField>
+		<DataField 
+			 name="race3"
+			 optype="continuous"
+			 dataType="double">
+			<Extension  extender="spss.com"  name="format"  value="5" />
+			<Extension  extender="spss.com"  name="width"  value="8" />
+			<Extension  extender="spss.com"  name="decimals"  value="2" />
+		</DataField>
+		<DataField 
+			 name="age"
+			 optype="continuous"
+			 dataType="double">
+			<Extension  extender="spss.com"  name="format"  value="5" />
+			<Extension  extender="spss.com"  name="width"  value="8" />
+			<Extension  extender="spss.com"  name="decimals"  value="2" />
+		</DataField>
+	</DataDictionary>
+	<GeneralRegressionModel 
+		 targetVariableName="strengthscore"
+		 modelType="regression"
+		 functionName="regression">
+		<Extension  extender="spss.com"  name="numberParameters"  value="5" />
+		<Extension  extender="spss.com"  name="modelDF"  value="55" />
+		<MiningSchema >
+			<MiningField  name="strengthscore"  usageType="predicted" />
+			<MiningField  name="race1"  usageType="active" />
+			<MiningField  name="race2"  usageType="active" />
+			<MiningField  name="race3"  usageType="active" />
+			<MiningField  name="age"  usageType="active" />
+		</MiningSchema>
+		<ParameterList >
+			<Parameter  name="(Constant)"  label="(Constant)" />
+			<Parameter  name="race1"  label="race1" />
+			<Parameter  name="race2"  label="race2" />
+			<Parameter  name="race3"  label="race3" />
+			<Parameter  name="age"  label="age" />
+		</ParameterList>
+		<CovariateList >
+			<Predictor  name="race1" />
+			<Predictor  name="race2" />
+			<Predictor  name="race3" />
+			<Predictor  name="age" />
+		</CovariateList>
+		<PPMatrix >
+			<PPCell  value="1"  predictorName="race1"  parameterName="race1" />
+			<PPCell  value="1"  predictorName="race2"  parameterName="race2" />
+			<PPCell  value="1"  predictorName="race3"  parameterName="race3" />
+			<PPCell  value="1"  predictorName="age"  parameterName="age" />
+		</PPMatrix>
+		<ParamMatrix >
+			<PCell  parameterName="(Constant)"  beta="88.4591891055401" />
+			<PCell  parameterName="race1"  beta="-8.67142525533897" />
+			<PCell  parameterName="race2"  beta="8.81123955431748" />
+			<PCell  parameterName="race3"  beta="-16.8585995047973" />
+			<PCell  parameterName="age"  beta="-0.199524141132776" />
+		</ParamMatrix>
+	</GeneralRegressionModel>
+</PMML>

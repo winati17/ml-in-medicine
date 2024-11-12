@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<PMML 
+	 version="4.0"
+	 xmlns="http://www.dmg.org/PMML-4_0"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://www.dmg.org/PMML-4_0 pmml-4-0.xsd">
+	<Header 
+		 copyright="Copyright (c) 1989, 2010 SPSS Inc., an IBM Company.">
+		<Application  name="IBM SPSS Statistics "  version="19.0.0" />
+	</Header>
+	<DataDictionary 
+		 numberOfFields="3">
+		<DataField 
+			 name="hoursofsleep"
+			 optype="continuous"
+			 dataType="double">
+			<Extension  extender="spss.com"  name="format"  value="5" />
+			<Extension  extender="spss.com"  name="width"  value="8" />
+			<Extension  extender="spss.com"  name="decimals"  value="2" />
+		</DataField>
+		<DataField 
+			 name="treatment"
+			 optype="continuous"
+			 dataType="double">
+			<Extension  extender="spss.com"  name="format"  value="5" />
+			<Extension  extender="spss.com"  name="width"  value="8" />
+			<Extension  extender="spss.com"  name="decimals"  value="2" />
+		</DataField>
+		<DataField 
+			 name="age"
+			 optype="continuous"
+			 dataType="double">
+			<Extension  extender="spss.com"  name="format"  value="5" />
+			<Extension  extender="spss.com"  name="width"  value="8" />
+			<Extension  extender="spss.com"  name="decimals"  value="2" />
+		</DataField>
+	</DataDictionary>
+	<GeneralRegressionModel 
+		 targetVariableName="hoursofsleep"
+		 modelType="regression"
+		 functionName="regression">
+		<Extension  extender="spss.com"  name="numberParameters"  value="3" />
+		<Extension  extender="spss.com"  name="modelDF"  value="17" />
+		<MiningSchema >
+			<MiningField  name="hoursofsleep"  usageType="predicted" />
+			<MiningField  name="treatment"  usageType="active" />
+			<MiningField  name="age"  usageType="active" />
+		</MiningSchema>
+		<ParameterList >
+			<Parameter  name="(Constant)"  label="(Constant)" />
+			<Parameter  name="treatment"  label="treatment" />
+			<Parameter  name="age"  label="age" />
+		</ParameterList>
+		<CovariateList >
+			<Predictor  name="treatment" />
+			<Predictor  name="age" />
+		</CovariateList>
+		<PPMatrix >
+			<PPCell  value="1"  predictorName="treatment"  parameterName="treatment" />
+			<PPCell  value="1"  predictorName="age"  parameterName="age" />
+		</PPMatrix>
+		<ParamMatrix >
+			<PCell  parameterName="(Constant)"  beta="0.98872931398994" />
+			<PCell  parameterName="treatment"  beta="-0.411050521251003" />
+			<PCell  parameterName="age"  beta="0.0849967193992855" />
+		</ParamMatrix>
+	</GeneralRegressionModel>
+</PMML>

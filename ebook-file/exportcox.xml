@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<PMML 
+	 version="4.0"
+	 xmlns="http://www.dmg.org/PMML-4_0"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://www.dmg.org/PMML-4_0 pmml-4-0.xsd">
+	<Header 
+		 copyright="Copyright (c) 1989, 2010 SPSS Inc., an IBM Company.">
+		<Application  name="IBM SPSS Statistics "  version="19.0.0" />
+	</Header>
+	<DataDictionary 
+		 numberOfFields="4">
+		<DataField 
+			 name="followupmonth"
+			 optype="continuous"
+			 dataType="double">
+			<Extension  extender="spss.com"  name="format"  value="5" />
+			<Extension  extender="spss.com"  name="width"  value="8" />
+			<Extension  extender="spss.com"  name="decimals"  value="2" />
+		</DataField>
+		<DataField 
+			 name="event"
+			 optype="continuous"
+			 dataType="double">
+			<Extension  extender="spss.com"  name="format"  value="5" />
+			<Extension  extender="spss.com"  name="width"  value="8" />
+			<Extension  extender="spss.com"  name="decimals"  value="2" />
+		</DataField>
+		<DataField 
+			 name="treatment"
+			 optype="continuous"
+			 dataType="double">
+			<Extension  extender="spss.com"  name="format"  value="5" />
+			<Extension  extender="spss.com"  name="width"  value="8" />
+			<Extension  extender="spss.com"  name="decimals"  value="2" />
+		</DataField>
+		<DataField 
+			 name="age"
+			 optype="continuous"
+			 dataType="double">
+			<Extension  extender="spss.com"  name="format"  value="5" />
+			<Extension  extender="spss.com"  name="width"  value="8" />
+			<Extension  extender="spss.com"  name="decimals"  value="2" />
+		</DataField>
+	</DataDictionary>
+	<GeneralRegressionModel 
+		 modelType="CoxRegression"
+		 modelName="COXREG"
+		 functionName="regression"
+		 endTimeVariable="followupmonth"
+		 statusVariable="event">
+		<MiningSchema >
+			<MiningField 
+				 name="event"
+				 usageType="predicted">
+			</MiningField>
+			<MiningField  name="followupmonth"  usageType="active" />
+			<MiningField  name="treatment"  usageType="active" />
+			<MiningField  name="age"  usageType="active" />
+		</MiningSchema>
+		<ParameterList >
+			<Parameter  name="P0000001"  label="treatment"  referencePoint="0" />
+			<Parameter  name="P0000002"  label="age"  referencePoint="0" />
+		</ParameterList>
+		<CovariateList >
+			<Predictor  name="treatment" />
+			<Predictor  name="age" />
+		</CovariateList>
+		<PPMatrix >
+			<PPCell  value="1"  predictorName="treatment"  parameterName="P0000001" />
+			<PPCell  value="1"  predictorName="age"  parameterName="P0000002" />
+		</PPMatrix>
+		<ParamMatrix >
+			<PCell  parameterName="P0000001"  beta="-0.790699458991624"  df="1" />
+			<PCell  parameterName="P0000002"  beta="0.0279381411253527"  df="1" />
+		</ParamMatrix>
+		<EventValues >
+			<Value  value="1"  property="valid" />
+		</EventValues>
+		<BaseCumHazardTables 
+			 maxTime="30">
+			<BaselineCell  time="1"  cumHazard="0.00708095771596478" />
+			<BaselineCell  time="2"  cumHazard="0.0356416636768657" />
+			<BaselineCell  time="4"  cumHazard="0.0404377311181491" />
+			<BaselineCell  time="5"  cumHazard="0.0454219369959223" />
+			<BaselineCell  time="6"  cumHazard="0.0561985122946352" />
+			<BaselineCell  time="7"  cumHazard="0.0620128870167787" />
+			<BaselineCell  time="9"  cumHazard="0.0744757018357497" />
+			<BaselineCell  time="11"  cumHazard="0.0812302333121072" />
+			<BaselineCell  time="12"  cumHazard="0.0882930019181953" />
+			<BaselineCell  time="14"  cumHazard="0.0955114723987359" />
+			<BaselineCell  time="16"  cumHazard="0.118160698834429" />
+			<BaselineCell  time="17"  cumHazard="0.134418501856498" />
+			<BaselineCell  time="18"  cumHazard="0.152365546959743" />
+			<BaselineCell  time="19"  cumHazard="0.171977969377628" />
+			<BaselineCell  time="20"  cumHazard="0.182190010907991" />
+			<BaselineCell  time="21"  cumHazard="0.192573533339653" />
+			<BaselineCell  time="22"  cumHazard="0.203314823726104" />
+			<BaselineCell  time="23"  cumHazard="0.214790704781611" />
+			<BaselineCell  time="24"  cumHazard="0.226607537458119" />
+			<BaselineCell  time="26"  cumHazard="0.238787231678753" />
+			<BaselineCell  time="27"  cumHazard="0.251414197289963" />
+			<BaselineCell  time="28"  cumHazard="0.278196081954083" />
+			<BaselineCell  time="29"  cumHazard="0.323767444587686" />
+		</BaseCumHazardTables>
+	</GeneralRegressionModel>
+</PMML>

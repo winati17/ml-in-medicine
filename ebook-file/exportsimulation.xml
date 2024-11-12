@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<PMML 
+	 version="4.0"
+	 xmlns="http://www.dmg.org/PMML-4_0"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://www.dmg.org/PMML-4_0 pmml-4-0.xsd">
+	<Header 
+		 copyright="Copyright (c) IBM Corp. 1999, 2012.">
+		<Application  name="IBM SPSS Statistics"  version="21.0.0.0" />
+	</Header>
+	<DataDictionary 
+		 numberOfFields="4">
+		<DataField 
+			 name="cost"
+			 optype="continuous"
+			 dataType="double">
+			<Extension  extender="spss.com"  name="format"  value="5" />
+			<Extension  extender="spss.com"  name="width"  value="5" />
+			<Extension  extender="spss.com"  name="decimals"  value="0" />
+		</DataField>
+		<DataField 
+			 name="age"
+			 optype="continuous"
+			 dataType="double">
+			<Extension  extender="spss.com"  name="format"  value="5" />
+			<Extension  extender="spss.com"  name="width"  value="2" />
+			<Extension  extender="spss.com"  name="decimals"  value="0" />
+		</DataField>
+		<DataField 
+			 name="complications"
+			 optype="continuous"
+			 dataType="double">
+			<Extension  extender="spss.com"  name="format"  value="5" />
+			<Extension  extender="spss.com"  name="width"  value="2" />
+			<Extension  extender="spss.com"  name="decimals"  value="0" />
+		</DataField>
+		<DataField 
+			 name="ichours"
+			 optype="continuous"
+			 dataType="double">
+			<Extension  extender="spss.com"  name="format"  value="5" />
+			<Extension  extender="spss.com"  name="width"  value="2" />
+			<Extension  extender="spss.com"  name="decimals"  value="0" />
+		</DataField>
+	</DataDictionary>
+	<GeneralRegressionModel 
+		 targetVariableName="cost"
+		 modelType="regression"
+		 functionName="regression">
+		<Extension  extender="spss.com"  name="numberParameters"  value="4" />
+		<Extension  extender="spss.com"  name="modelDF"  value="8996" />
+		<MiningSchema >
+			<MiningField  name="cost"  usageType="predicted" />
+			<MiningField  name="age"  usageType="active" />
+			<MiningField  name="complications"  usageType="active" />
+			<MiningField  name="ichours"  usageType="active" />
+		</MiningSchema>
+		<ParameterList >
+			<Parameter  name="(Constant)"  label="(Constant)" />
+			<Parameter  name="age"  label="age" />
+			<Parameter  name="complications"  label="complications" />
+			<Parameter  name="ichours"  label="ichours" />
+		</ParameterList>
+		<CovariateList >
+			<Predictor  name="age" />
+			<Predictor  name="complications" />
+			<Predictor  name="ichours" />
+		</CovariateList>
+		<PPMatrix >
+			<PPCell  value="1"  predictorName="age"  parameterName="age" />
+			<PPCell  value="1"  predictorName="complications"  parameterName="complications" />
+			<PPCell  value="1"  predictorName="ichours"  parameterName="ichours" />
+		</PPMatrix>
+		<PCovMatrix >
+			<PCovCell  pRow="(Constant)"  pCol="(Constant)"  value="64538.1967433727" />
+			<PCovCell  pRow="age"  pCol="age"  value="7.6589854539792" />
+			<PCovCell  pRow="age"  pCol="(Constant)"  value="-455.670967955393" />
+			<PCovCell  pRow="complications"  pCol="age"  value="-3.86961160939197" />
+			<PCovCell  pRow="complications"  pCol="complications"  value="469.210395011815" />
+			<PCovCell  pRow="complications"  pCol="(Constant)"  value="-3346.5878611687" />
+			<PCovCell  pRow="ichours"  pCol="age"  value="-0.0728115415017545" />
+			<PCovCell  pRow="ichours"  pCol="complications"  value="-0.621873422209479" />
+			<PCovCell  pRow="ichours"  pCol="ichours"  value="4.51121005066145" />
+			<PCovCell  pRow="ichours"  pCol="(Constant)"  value="-193.032889983393" />
+		</PCovMatrix>
+		<ParamMatrix >
+			<PCell  parameterName="(Constant)"  beta="-28570.9766619974" />
+			<PCell  parameterName="age"  beta="202.402976186455" />
+			<PCell  parameterName="complications"  beta="4022.40494216269" />
+			<PCell  parameterName="ichours"  beta="-111.240572366083" />
+		</ParamMatrix>
+	</GeneralRegressionModel>
+</PMML>
